@@ -1,0 +1,42 @@
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+ext {
+    appcompatVersion = "26.1.0"
+    designVersion = "26.1.0"
+    constraintLayoutVersion = "1.0.2"
+    cardviewVersion = "26.1.0"
+    recyclerviewVersion = "26.1.0"
+    junitVersion = "4.12"
+    runnerVersion = "1.0.1"
+    espressoCoreVersion = "3.0.1"
+    mediarouterVersion = "26.1.0"
+    fiveStarVersion = "v3.1"
+    simpleratingbarVersion = "0.1.3"
+    butterKnifeVersion = "8.8.1"
+    retrofitVersion = "2.3.0"
+    gsonVersion = "2.6.2"
+    sweetAlertVersion = "1.5.1"
+    askVersion = "2.5"
+    circleViewVersion = "1.3"
+    debugDbVersion = "1.0.3"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

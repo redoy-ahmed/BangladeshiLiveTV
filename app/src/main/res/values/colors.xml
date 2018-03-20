@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="mobile_screen">#040404</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="headers">#ff5b5b5b</color>
+    <color name="yellow">#f49600</color>
+    <color name="gray">#868686</color>
+    <color name="line">#c6cbcf</color>
+</resources>
