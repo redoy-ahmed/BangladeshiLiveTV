@@ -62,12 +62,12 @@ public class CustomSharedPreference {
         return sharedPref.getString(Constants.FOLLOW_QUIZ, "");
     }
 
-    public void storeCurrentQuiz(String quiz) {
-        sharedPref.edit().putString(Constants.CURRENT_QUIZ, quiz).apply();
+    public void saveIsUserLoggedIn(boolean isFirstTime) {
+        sharedPref.edit().putBoolean(Constants.IS_USER_LOGGED_IN, isFirstTime).apply();
     }
 
-    public String getCurrentQuiz() {
-        return sharedPref.getString(Constants.CURRENT_QUIZ, "");
+    public boolean getSavedIsUserLoggedIn() {
+        return sharedPref.getBoolean(Constants.IS_USER_LOGGED_IN, false);
     }
 
     public void saveIsFirstTimeOpening(boolean isFirstTime) {

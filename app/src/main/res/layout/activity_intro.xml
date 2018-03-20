@@ -3,43 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
+    <ImageView
         android:id="@+id/top_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginTop="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
         android:alpha="0.8"
-        android:background="@drawable/round_corner_mobile_top" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomView"
-        android:layout_below="@+id/top_view"
-        android:paddingLeft="64dp"
-        android:paddingRight="64dp" />
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomView"
-        android:layout_below="@+id/top_view"
-        android:layout_marginLeft="55dp"
-        android:alpha="0.8"
-        android:background="@color/mobile_screen" />
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomView"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/top_view"
-        android:layout_marginRight="55dp"
-        android:alpha="0.8"
-        android:background="@color/mobile_screen" />
+        android:src="@drawable/intro_logo" />
 
     <LinearLayout
         android:id="@+id/bottomView"
@@ -48,40 +20,6 @@
         android:layout_alignParentBottom="true"
         android:background="@color/white"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp">
-
-            <View
-                android:id="@+id/circle1"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@drawable/circle_fill" />
-
-            <View
-                android:id="@+id/circle2"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/circle" />
-
-            <View
-                android:id="@+id/circle3"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/circle" />
-
-            <View
-                android:id="@+id/circle4"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/circle" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
