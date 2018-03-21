@@ -51,4 +51,6 @@ dependencies {
     debugImplementation 'com.amitshekhar.android:debug-db:' + rootProject.debugDbVersion
     implementation 'com.github.tiagohm:CodeView:0.4.0'
     implementation 'com.ramotion.paperonboarding:paper-onboarding:1.1.1'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'com.android.support:support-annotations:23.1.1'
 }

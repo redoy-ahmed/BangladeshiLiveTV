@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.example.redoyahmed.bangladeshilivetv.R;
 import com.example.redoyahmed.bangladeshilivetv.Services.LiveTvApplication;
@@ -23,6 +25,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.onboarding_main_layout);
 
         shared = LiveTvApplication.getSharedPreference(getApplicationContext());
@@ -31,7 +35,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             initializeWidgets();
             loadData();
         } else {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), IntroActivity.class));
             finish();
         }
     }
@@ -53,9 +57,9 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private ArrayList<PaperOnboardingPage> getDataForOnBoarding() {
-        PaperOnboardingPage scr1 = new PaperOnboardingPage("Live Sports", "A simple way to watch Live Sports", Color.parseColor("#9B90BC"), R.drawable.ic_menu_send, R.drawable.intro_logo);
-        PaperOnboardingPage scr2 = new PaperOnboardingPage("Live News", "A simple way to watch Live News", Color.parseColor("#678FB4"), R.drawable.ic_menu_send, R.drawable.intro_logo);
-        PaperOnboardingPage scr3 = new PaperOnboardingPage("Live Entertainment", "A simple way to watch Live Entertainment", Color.parseColor("#65B0B4"), R.drawable.ic_menu_send, R.drawable.intro_logo);
+        PaperOnboardingPage scr1 = new PaperOnboardingPage("Live Sports", "A simple way to watch Live Sports", Color.parseColor("#9B90BC"), R.drawable.intro_logo, R.drawable.ic_menu_send);
+        PaperOnboardingPage scr2 = new PaperOnboardingPage("Live News", "A simple way to watch Live News", Color.parseColor("#678FB4"), R.drawable.intro_logo, R.drawable.ic_menu_send);
+        PaperOnboardingPage scr3 = new PaperOnboardingPage("Live Entertainment", "A simple way to watch Live Entertainment", Color.parseColor("#65B0B4"), R.drawable.intro_logo, R.drawable.ic_menu_send);
 
         ArrayList<PaperOnboardingPage> elements = new ArrayList();
         elements.add(scr1);
