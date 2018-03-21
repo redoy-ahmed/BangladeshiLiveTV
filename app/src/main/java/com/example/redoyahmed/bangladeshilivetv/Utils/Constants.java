@@ -8,7 +8,6 @@ public class Constants {
     public static final String CHECK_QUIZ = "CHECK_QUIZ";
     public static final String CURRENT_QUIZ = "current_quiz";
     public static final String DASHBOARD = "dashboard";
-    public static final String EMAIL = "email";
     public static final String FOLLOW_QUIZ = "FOLLOW_QUIZ";
     public static final String ID = "id";
     public static final String LANGUAGE_ID = "language_id";
@@ -26,8 +25,14 @@ public class Constants {
     public static final String SUBCATEGORY = "subcategory";
     public static final String USER_DATA = "USER_DATA";
     public static final String FIRST_TIME_OPENING = "FIRST_TIME_OPENING";
-    public static final String IS_USER_LOGGED_IN = "IS_USER_LOGGED_IN";
+    public static final String IS_LOGGED_IN = "IsLoggedIn";
     public static int GET_SUCCESS_MSG = 0;
-    public static final String ARRAY_NAME = "LIVETV";
+    public static final String ARRAY_NAME = "LIVETVforSignUp";
     public static final String SUCCESS = "success";
+    public static final String IS_LOGGED_REMEMBER = "IsLoggedRemember";
+    public static final String REMEMBER_EMAIL = "remember_email";
+    public static final String REMEMBER_PASSWORD = "remember_password";
+    public static final String USER_ID = "user_id";
+    public static final String USER_NAME = "user_name";
+    public static final String EMAIL = "email";
 }

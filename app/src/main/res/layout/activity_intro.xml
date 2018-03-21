@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="98dp"
         android:alpha="0.8"
-        android:src="@drawable/intro_logo" />
+        android:src="@mipmap/app_logo" />
 
     <LinearLayout
         android:id="@+id/bottomView"

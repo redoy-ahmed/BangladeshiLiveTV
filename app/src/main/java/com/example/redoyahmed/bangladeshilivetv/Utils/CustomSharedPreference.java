@@ -62,19 +62,58 @@ public class CustomSharedPreference {
         return sharedPref.getString(Constants.FOLLOW_QUIZ, "");
     }
 
-    public void saveIsUserLoggedIn(boolean isFirstTime) {
-        sharedPref.edit().putBoolean(Constants.IS_USER_LOGGED_IN, isFirstTime).apply();
-    }
-
-    public boolean getSavedIsUserLoggedIn() {
-        return sharedPref.getBoolean(Constants.IS_USER_LOGGED_IN, false);
-    }
-
     public void saveIsFirstTimeOpening(boolean isFirstTime) {
         sharedPref.edit().putBoolean(Constants.FIRST_TIME_OPENING, isFirstTime).apply();
     }
 
+    public void saveIsLogin(boolean flag) {
+        sharedPref.edit().putBoolean(Constants.IS_LOGGED_IN, flag).apply();
+    }
+
+    public boolean getIsLogin() {
+        return sharedPref.getBoolean(Constants.IS_LOGGED_IN, false);
+    }
+
     public boolean getSavedIsFirstTimeOpening() {
         return sharedPref.getBoolean(Constants.FIRST_TIME_OPENING, true);
+    }
+
+    public void saveIsRemember(boolean flag) {
+        sharedPref.edit().putBoolean(Constants.IS_LOGGED_REMEMBER, flag).apply();
+    }
+
+    public boolean getIsRemember() {
+        return sharedPref.getBoolean(Constants.IS_LOGGED_REMEMBER, false);
+    }
+
+    public void saveRemember(String email, String password) {
+        sharedPref.edit().putString(Constants.REMEMBER_EMAIL, email);
+        sharedPref.edit().putString(Constants.REMEMBER_PASSWORD, password);
+    }
+
+    public String getRememberEmail() {
+        return sharedPref.getString(Constants.REMEMBER_EMAIL, "");
+    }
+
+    public String getRememberPassword() {
+        return sharedPref.getString(Constants.REMEMBER_PASSWORD, "");
+    }
+
+    public void saveLogin(String user_id, String user_name, String email) {
+        sharedPref.edit().putString(Constants.USER_ID, user_id);
+        sharedPref.edit().putString(Constants.USER_NAME, user_name);
+        sharedPref.edit().putString(Constants.EMAIL, email);
+    }
+
+    public String getUserId() {
+        return sharedPref.getString(Constants.USER_ID, "");
+    }
+
+    public String getUserName() {
+        return sharedPref.getString(Constants.USER_NAME, "");
+    }
+
+    public String getUserEmail() {
+        return sharedPref.getString(Constants.EMAIL, "");
     }
 }

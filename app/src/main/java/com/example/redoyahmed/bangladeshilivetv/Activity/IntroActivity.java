@@ -41,7 +41,7 @@ public class IntroActivity extends AppCompatActivity {
 
     private void initializeWidgets() {
         sharedPreference = LiveTvApplication.getSharedPreference(getApplicationContext());
-        if (sharedPreference.getSavedIsUserLoggedIn() == false) {
+        if (sharedPreference.getIsLogin() == false) {
             btnSignUp.setOnClickListener(new ForSignUp());
             btnSignIn.setOnClickListener(new ForSignIn());
             btnSkip.setOnClickListener(new ForSkip());

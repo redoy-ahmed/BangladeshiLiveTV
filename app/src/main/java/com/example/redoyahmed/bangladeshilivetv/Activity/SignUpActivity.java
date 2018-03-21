@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.redoyahmed.bangladeshilivetv.Model.LIVETV;
-import com.example.redoyahmed.bangladeshilivetv.Model.RegisterResponse;
+import com.example.redoyahmed.bangladeshilivetv.Model.LIVETVforSignUp;
+import com.example.redoyahmed.bangladeshilivetv.Model.SignUpResponse;
 import com.example.redoyahmed.bangladeshilivetv.R;
 import com.example.redoyahmed.bangladeshilivetv.Services.ApiClient;
 import com.example.redoyahmed.bangladeshilivetv.Services.ApiInterface;
@@ -78,7 +78,7 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
         ButterKnife.bind(this);
 
         btnSignUp.setOnClickListener(new SignUpClass());
-        txtLogin.setOnClickListener(new LogInClass());
+        txtLogin.setOnClickListener(new SignInClass());
 
         validator = new Validator(this);
         validator.setValidationListener(this);
@@ -91,26 +91,26 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
 
         ApiInterface apiService = ApiClient.getSignUpClient().create(ApiInterface.class);
 
-        Call<RegisterResponse> call = apiService.requestOutput(strFullname, strEmail, strPassword, strMobi);
-        call.enqueue(new Callback<RegisterResponse>() {
+        Call<SignUpResponse> call = apiService.signUpOutput(strFullname, strEmail, strPassword, strMobi);
+        call.enqueue(new Callback<SignUpResponse>() {
             @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                 int statusCode = response.code();
 
                 if (statusCode == StatusCodes.OK) {
-                    final RegisterResponse registerResponse = response.body();
+                    final SignUpResponse registerResponse = response.body();
 
                     final Handler handler = new Handler();
                     Runnable runnable = new Runnable() {
                         @Override
                         public void run() {
-                            if (registerResponse.getLIVETV().length > 0) {
+                            if (registerResponse.getLIVETVforSignUp().length > 0) {
                                 dialog.dismiss();
 
-                                LIVETV[] livetv = registerResponse.getLIVETV();
-                                for (int i = 0; i < livetv.length; i++) {
-                                    strMessage = livetv[0].getMsg();
-                                    Constants.GET_SUCCESS_MSG = Integer.valueOf(livetv[0].getSuccess());
+                                LIVETVforSignUp[] LIVETVforSignUp = registerResponse.getLIVETVforSignUp();
+                                for (int i = 0; i < LIVETVforSignUp.length; i++) {
+                                    strMessage = LIVETVforSignUp[0].getMsg();
+                                    Constants.GET_SUCCESS_MSG = Integer.valueOf(LIVETVforSignUp[0].getSuccess());
                                 }
 
                                 setResult();
@@ -125,7 +125,7 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
             }
 
             @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
+            public void onFailure(Call<SignUpResponse> call, Throwable t) {
                 Log.e(TAG, t.toString());
             }
         });
@@ -140,8 +140,8 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
         }
     }
 
-    class LogInClass implements View.OnClickListener {
-        LogInClass() {
+    class SignInClass implements View.OnClickListener {
+        SignInClass() {
         }
 
         public void onClick(View v) {
@@ -167,23 +167,16 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
-
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
 
-            // Display error messages ;)
             if (view instanceof EditText) {
                 ((EditText) view).setError(message);
             } else {
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
         }
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 
     public void showToast(String msg) {
@@ -202,5 +195,4 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
         startActivity(intent);
         finish();
     }
-
 }

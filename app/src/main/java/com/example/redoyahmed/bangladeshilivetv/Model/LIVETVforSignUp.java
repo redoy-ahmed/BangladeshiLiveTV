@@ -4,7 +4,7 @@ package com.example.redoyahmed.bangladeshilivetv.Model;
  * Created by redoy.ahmed on 20-Mar-2018.
  */
 
-public class LIVETV {
+public class LIVETVforSignUp {
 
     private String success;
 

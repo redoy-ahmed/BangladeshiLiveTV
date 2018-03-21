@@ -57,9 +57,9 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private ArrayList<PaperOnboardingPage> getDataForOnBoarding() {
-        PaperOnboardingPage scr1 = new PaperOnboardingPage("Live Sports", "A simple way to watch Live Sports", Color.parseColor("#9B90BC"), R.drawable.intro_logo, R.drawable.ic_menu_send);
-        PaperOnboardingPage scr2 = new PaperOnboardingPage("Live News", "A simple way to watch Live News", Color.parseColor("#678FB4"), R.drawable.intro_logo, R.drawable.ic_menu_send);
-        PaperOnboardingPage scr3 = new PaperOnboardingPage("Live Entertainment", "A simple way to watch Live Entertainment", Color.parseColor("#65B0B4"), R.drawable.intro_logo, R.drawable.ic_menu_send);
+        PaperOnboardingPage scr1 = new PaperOnboardingPage("Live Sports", "A simple way to watch Live Sports", Color.parseColor("#9B90BC"), R.mipmap.app_logo, R.drawable.ic_menu_send);
+        PaperOnboardingPage scr2 = new PaperOnboardingPage("Live News", "A simple way to watch Live News", Color.parseColor("#678FB4"), R.mipmap.app_logo, R.drawable.ic_menu_send);
+        PaperOnboardingPage scr3 = new PaperOnboardingPage("Live Entertainment", "A simple way to watch Live Entertainment", Color.parseColor("#65B0B4"), R.mipmap.app_logo, R.drawable.ic_menu_send);
 
         ArrayList<PaperOnboardingPage> elements = new ArrayList();
         elements.add(scr1);
