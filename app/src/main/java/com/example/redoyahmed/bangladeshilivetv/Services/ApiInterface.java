@@ -1,5 +1,6 @@
 package com.example.redoyahmed.bangladeshilivetv.Services;
 
+import com.example.redoyahmed.bangladeshilivetv.Model.ForgotPasswordResponse;
 import com.example.redoyahmed.bangladeshilivetv.Model.SignInResponse;
 import com.example.redoyahmed.bangladeshilivetv.Model.SignUpResponse;
 
@@ -19,4 +20,7 @@ public interface ApiInterface {
     @GET("user_login_api.php?")
     Call<SignInResponse> signInOutput(@Query("email") String email,
                                       @Query("password") String password);
+
+    @GET("user_forgot_pass_api.php?")
+    Call<ForgotPasswordResponse> forgotPasswordOutput(@Query("email") String email);
 }
