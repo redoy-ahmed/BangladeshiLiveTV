@@ -13,7 +13,7 @@ public class ApiClient {
     public static final String CLIENT_SECRET = "290208e794df2b5f13163f0098bff459eac5c486f31b09ef237d4c7639100cb5";
     private static Retrofit retrofit = null;
 
-    public static Retrofit getSignUpClient() {
+    public static Retrofit getLiveTvClient() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(SERVER_URL)

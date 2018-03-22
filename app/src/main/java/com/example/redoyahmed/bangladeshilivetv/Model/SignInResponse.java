@@ -21,6 +21,6 @@ public class SignInResponse {
 
     @Override
     public String toString() {
-        return "ClassPojo [LIVETVforSignUp = " + LIVETVforSignIn + "]";
+        return "ClassPojo [LIVETVforSignIn = " + LIVETVforSignIn + "]";
     }
 }

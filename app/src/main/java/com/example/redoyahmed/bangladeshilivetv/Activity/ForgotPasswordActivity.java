@@ -93,7 +93,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements Validat
         final SweetAlertDialog dialog = customSweetAlertDialog.getProgressDialog(this, "Running...");
         dialog.show();
 
-        ApiInterface apiService = ApiClient.getSignUpClient().create(ApiInterface.class);
+        ApiInterface apiService = ApiClient.getLiveTvClient().create(ApiInterface.class);
 
         Call<ForgotPasswordResponse> call = apiService.forgotPasswordOutput(strEmail);
         call.enqueue(new Callback<ForgotPasswordResponse>() {

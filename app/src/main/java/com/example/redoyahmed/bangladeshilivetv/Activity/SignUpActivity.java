@@ -89,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
         final SweetAlertDialog dialog = customSweetAlertDialog.getProgressDialog(this, "Running...");
         dialog.show();
 
-        ApiInterface apiService = ApiClient.getSignUpClient().create(ApiInterface.class);
+        ApiInterface apiService = ApiClient.getLiveTvClient().create(ApiInterface.class);
 
         Call<SignUpResponse> call = apiService.signUpOutput(strFullname, strEmail, strPassword, strMobi);
         call.enqueue(new Callback<SignUpResponse>() {
@@ -156,7 +156,7 @@ public class SignUpActivity extends AppCompatActivity implements ValidationListe
         strFullname = edtFullName.getText().toString().replace(" ", "%20");
         strEmail = edtEmail.getText().toString();
         strPassword = edtPassword.getText().toString();
-        strMobi = this.edtMobile.getText().toString();
+        strMobi = edtMobile.getText().toString();
 
         if (ConnectionStatus.getInstance(this).isOnline()) {
             signUp();

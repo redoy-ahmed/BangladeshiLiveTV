@@ -145,15 +145,13 @@ public class SignInActivity extends AppCompatActivity implements Validator.Valid
         final SweetAlertDialog dialog = customSweetAlertDialog.getProgressDialog(this, "Running...");
         dialog.show();
 
-        ApiInterface apiService = ApiClient.getSignUpClient().create(ApiInterface.class);
+        ApiInterface apiService = ApiClient.getLiveTvClient().create(ApiInterface.class);
 
         Call<SignInResponse> call = apiService.signInOutput(strEmail, strPassword);
         call.enqueue(new Callback<SignInResponse>() {
             @Override
             public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
-                int statusCode = response.code();
-
-                if (statusCode == StatusCodes.OK) {
+                if (response.code() == StatusCodes.OK) {
                     final SignInResponse signInResponse = response.body();
 
                     final Handler handler = new Handler();
@@ -165,10 +163,15 @@ public class SignInActivity extends AppCompatActivity implements Validator.Valid
 
                                 LIVETVforSignIn[] livetv = signInResponse.getLIVETVforSignIn();
                                 for (int i = 0; i < livetv.length; i++) {
-                                    strMessage = livetv[0].getName();
-                                    Constants.GET_SUCCESS_MSG = Integer.valueOf(livetv[0].getSuccess());
+                                    if (livetv[0].getSuccess().equals("0")) {
+                                        strMessage = "Login failed";
+                                        Constants.GET_SUCCESS_MSG = 0;
+                                    } else {
+                                        strName = livetv[0].getName();
+                                        strPassengerId = livetv[0].getUser_id();
+                                        Constants.GET_SUCCESS_MSG = 1;
+                                    }
                                 }
-
                                 setResult();
                                 handler.removeCallbacksAndMessages(true);
                             } else {

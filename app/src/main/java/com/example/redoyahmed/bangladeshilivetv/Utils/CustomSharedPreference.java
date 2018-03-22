@@ -100,9 +100,9 @@ public class CustomSharedPreference {
     }
 
     public void saveLogin(String user_id, String user_name, String email) {
-        sharedPref.edit().putString(Constants.USER_ID, user_id);
-        sharedPref.edit().putString(Constants.USER_NAME, user_name);
-        sharedPref.edit().putString(Constants.EMAIL, email);
+        sharedPref.edit().putString(Constants.USER_ID, user_id).apply();
+        sharedPref.edit().putString(Constants.USER_NAME, user_name).apply();
+        sharedPref.edit().putString(Constants.EMAIL, email).apply();
     }
 
     public String getUserId() {

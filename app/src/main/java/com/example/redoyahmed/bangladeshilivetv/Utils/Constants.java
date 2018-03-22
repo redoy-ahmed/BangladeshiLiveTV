@@ -27,7 +27,7 @@ public class Constants {
     public static final String FIRST_TIME_OPENING = "FIRST_TIME_OPENING";
     public static final String IS_LOGGED_IN = "IsLoggedIn";
     public static int GET_SUCCESS_MSG = 0;
-    public static final String ARRAY_NAME = "LIVETVforSignUp";
+    public static final String ARRAY_NAME = "LIVETV";
     public static final String SUCCESS = "success";
     public static final String IS_LOGGED_REMEMBER = "IsLoggedRemember";
     public static final String REMEMBER_EMAIL = "remember_email";

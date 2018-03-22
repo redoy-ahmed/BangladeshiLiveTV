@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.redoyahmed.bangladeshilivetv.Activity.ProfileActivity"
+    tools:showIn="@layout/activity_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_corner"
+                android:drawableLeft="@drawable/ic_user"
+                android:drawablePadding="15dp"
+                android:hint="Full Name"
+                android:inputType="text|textCapCharacters|textCapWords|textCapSentences|textAutoCorrect|textAutoComplete|textMultiLine|textImeMultiLine|textNoSuggestions|textUri|textEmailAddress|textEmailSubject|textShortMessage|textLongMessage|textPersonName|textPostalAddress|textPassword|textVisiblePassword|textWebEditText|textFilter|textPhonetic|textWebEmailAddress|textWebPassword|phone|time"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/cursor" />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_corner"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="15dp"
+                android:hint="@string/email"
+                android:inputType="text|textCapCharacters|textCapWords|textCapSentences|textAutoCorrect|textAutoComplete|textMultiLine|textImeMultiLine|textNoSuggestions|textUri|textEmailAddress|textEmailSubject|textShortMessage|textLongMessage|textPersonName|textPostalAddress|textPassword|textVisiblePassword|textWebEditText|textFilter|textPhonetic|textWebEmailAddress|textWebPassword|phone|time"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/cursor" />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_corner"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="15dp"
+                android:hint="@string/password"
+                android:inputType="text|textCapCharacters|textCapWords|textCapSentences|textAutoCorrect|textAutoComplete|textMultiLine|textImeMultiLine|textNoSuggestions|textUri|textEmailAddress|textEmailSubject|textShortMessage|textLongMessage|textPersonName|textPostalAddress|textPassword|textVisiblePassword|textWebEditText|textFilter|textPhonetic|textWebEmailAddress|textWebPassword|phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/cursor" />
+
+            <EditText
+                android:id="@+id/edt_contact_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_corner"
+                android:drawableLeft="@drawable/ic_contact"
+                android:drawablePadding="15dp"
+                android:hint="@string/phone"
+                android:inputType="text|textCapCharacters|textCapWords|textCapSentences|textAutoCorrect|textAutoComplete|textMultiLine|textImeMultiLine|textNoSuggestions|textUri|textEmailAddress|textEmailSubject|textShortMessage|textLongMessage|textPersonName|textPostalAddress|textPassword|textVisiblePassword|textWebEditText|textFilter|textPhonetic|textWebEmailAddress|textWebPassword|number|numberSigned|numberDecimal|numberPassword|phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/cursor" />
+        </LinearLayout>
+
+        <Button
+            android:id="@id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_yellow"
+            android:text="Update"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
