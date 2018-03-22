@@ -8,4 +8,15 @@
     tools:context="com.example.redoyahmed.bangladeshilivetv.Activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/Container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

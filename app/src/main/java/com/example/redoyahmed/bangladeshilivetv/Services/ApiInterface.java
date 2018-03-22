@@ -2,11 +2,11 @@ package com.example.redoyahmed.bangladeshilivetv.Services;
 
 import com.example.redoyahmed.bangladeshilivetv.Model.ForgotPasswordResponse;
 import com.example.redoyahmed.bangladeshilivetv.Model.GetUserProfileResponse;
+import com.example.redoyahmed.bangladeshilivetv.Model.HomeResponse;
 import com.example.redoyahmed.bangladeshilivetv.Model.SignInResponse;
 import com.example.redoyahmed.bangladeshilivetv.Model.SignUpResponse;
 import com.example.redoyahmed.bangladeshilivetv.Model.UpdateProfileResponse;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -22,7 +22,7 @@ public interface ApiInterface {
 
     @GET("user_login_api.php?")
     Call<SignInResponse> signInOutput(@Query("email") String email,
-                                    @Query("password") String password);
+                                      @Query("password") String password);
 
     @GET("user_forgot_pass_api.php?")
     Call<ForgotPasswordResponse> forgotPasswordOutput(@Query("email") String email);
@@ -36,4 +36,8 @@ public interface ApiInterface {
                                                     @Query("password") String password,
                                                     @Query("phone") String phone,
                                                     @Query("user_id") String user_id);
+
+    @GET("api.php?home")
+    Call<HomeResponse> homeOutput();
+
 }

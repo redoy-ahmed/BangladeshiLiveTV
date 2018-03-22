@@ -11,6 +11,7 @@ public class ApiClient {
     public static final String LOGIN_URL = (SERVER_URL + "user_login_api.php?email=");
     public static final String CLIENT_ID = "e961d05b4710df1545223cb83822edca";
     public static final String CLIENT_SECRET = "290208e794df2b5f13163f0098bff459eac5c486f31b09ef237d4c7639100cb5";
+    public static final String IMAGE_PATH = SERVER_URL + "images/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getLiveTvClient() {

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <ImageView
         android:id="@+id/top_view"
@@ -9,16 +10,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="50dp"
         android:alpha="0.8"
-        android:src="@mipmap/app_logo" />
+        android:src="@drawable/intro_page_live_icon" />
 
     <LinearLayout
         android:id="@+id/bottomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:layout_below="@id/top_view"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -33,7 +34,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1.0"
                 android:background="@drawable/outline_button_yellow"
-                android:padding="4dp">
+                android:padding="2dp">
 
                 <Button
                     android:id="@+id/button_sign_up"
@@ -50,7 +51,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1.0"
                 android:background="@drawable/outline_button_blue"
-                android:padding="4dp">
+                android:padding="2dp">
 
                 <Button
                     android:id="@+id/button_sign_in"
@@ -68,7 +69,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1.0"
                 android:background="@drawable/outline_button_gray"
-                android:padding="4dp">
+                android:padding="2dp">
 
                 <Button
                     android:id="@+id/button_skip"

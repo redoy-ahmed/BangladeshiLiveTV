@@ -9,6 +9,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -53,4 +56,8 @@ dependencies {
     implementation 'com.ramotion.paperonboarding:paper-onboarding:1.1.1'
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
     implementation 'com.android.support:support-annotations:23.1.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'me.neavo:vitamio:4.2.2'
 }

@@ -1,11 +1,12 @@
 package com.example.redoyahmed.bangladeshilivetv.Activity;
 
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,40 +15,51 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
+import com.example.redoyahmed.bangladeshilivetv.Fragment.CategoryFragment;
+import com.example.redoyahmed.bangladeshilivetv.Fragment.FavoriteFragment;
+import com.example.redoyahmed.bangladeshilivetv.Fragment.HomeFragment;
+import com.example.redoyahmed.bangladeshilivetv.Fragment.LatestFragment;
 import com.example.redoyahmed.bangladeshilivetv.R;
 import com.example.redoyahmed.bangladeshilivetv.Services.LiveTvApplication;
 import com.example.redoyahmed.bangladeshilivetv.Utils.CustomSharedPreference;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+
     CustomSharedPreference shared;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
+        initializeWidgets();
+    }
+
+    private void initializeWidgets() {
         setSupportActionBar(toolbar);
-
         shared = LiveTvApplication.getSharedPreference(getApplicationContext());
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.Container, new HomeFragment()).commit();
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -82,21 +94,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            toolbar.setTitle("Home");
+            fragmentManager.beginTransaction().replace(R.id.Container, new HomeFragment()).commit();
         } else if (id == R.id.nav_category) {
-
+            fragmentManager.beginTransaction().replace(R.id.Container, new CategoryFragment()).commit();
         } else if (id == R.id.nav_latest) {
-
+            fragmentManager.beginTransaction().replace(R.id.Container, new LatestFragment()).commit();
         } else if (id == R.id.nav_favorite) {
-
+            fragmentManager.beginTransaction().replace(R.id.Container, new FavoriteFragment()).commit();
         } else if (id == R.id.nav_profile) {
             startActivity(new Intent(MainActivity.this, ProfileActivity.class));
         } else if (id == R.id.nav_rate) {
-
+            RateApp();
         } else if (id == R.id.nav_log_out) {
             logOut();
         }
@@ -108,6 +120,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void logOut() {
         new AlertDialog.Builder(this).setTitle("Logout").setMessage(getString(R.string.logout_msg)).setPositiveButton("Yes", new PositiveButtonClass()).setNegativeButton("No", new NegativeButtonClass()).setIcon(R.drawable.ic_logout).show();
+    }
+
+    private void RateApp() {
+        try {
+            startActivity(new Intent("android.intent.action.VIEW", Uri.parse("google.com")));
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent("android.intent.action.VIEW", Uri.parse("facebook.com")));
+        }
     }
 
     class NegativeButtonClass implements DialogInterface.OnClickListener {

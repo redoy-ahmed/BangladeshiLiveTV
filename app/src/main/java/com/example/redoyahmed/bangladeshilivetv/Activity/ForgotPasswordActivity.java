@@ -65,7 +65,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements Validat
 
     @Override
     public void onValidationSucceeded() {
-        this.strEmail = this.edtEmail.getText().toString();
+        strEmail = edtEmail.getText().toString();
         if (ConnectionStatus.getInstance(this).isOnline()) {
             forgotPassword();
         } else {
